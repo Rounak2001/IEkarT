@@ -3,6 +3,74 @@
 {% block title %}Log in{% endblock %}
 
 {% block content %}
+
+{% comment %}
+<!--  edited     -->
+<body>
+    <!-- Animated Wave Background  -->
+    <div class="ocean">
+        <div class="wave"></div>
+        <div class="wave"></div>
+    </div>
+    <!-- Log In Form Section -->
+    <section>
+        <div class="container" id="container">
+            <div class="form-container sign-up-container">
+                <form method="post" action=".">
+                    {% csrf_token %}
+                    <h1>Sign Up</h1>
+                    <span>Or use your Email for registration</span>
+                    <label>
+                        <input type="text" placeholder="Name"/>
+                    </label>
+                    <label>
+                        <input type="email" placeholder="Email"/>
+                    </label>
+                    <label>
+                        <input type="password" placeholder="Password"/>
+                    </label>
+                    <button style="margin-top: 9px">Sign Up</button>
+                </form>
+            </div>
+            <div class="form-container sign-in-container">
+                <form action="#">
+                    <img id="logo" src="4.png" alt="IEkarT logo">
+                    <h1>Sign in</h1>
+                    <br>
+                    <label>
+                        <input type="email" placeholder="Username"/>
+                        {{ form.username }}
+                    </label>
+                    <label>
+                        <input type="password" placeholder="Your Password"/>
+                        {{ form.password }}
+                    </label>
+                   
+                    <button>Sign In</button>
+                </form>
+            </div>
+            <div class="overlay-container">
+                <div class="overlay">
+                    <div class="overlay-panel overlay-left">
+                        <h1>Log in</h1>
+                        <p>Sign in here if you already have an account </p>
+                        <button class="ghost mt-5" id="signIn">Sign In</button>
+                    </div>
+                    <div class="overlay-panel overlay-right">
+                        <h1>Create your Account!</h1>
+                        <p>Sign up if you still don't have an IEkarT account > </p>
+                        <a href="signup.html">
+                            <button class="ghost" id="signUp">Sign Up</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    </body> 
+
+<!--pahale ka-->
+  {% endcomment %}
 <div class="w-1/2 my-6 mx-auto p-6 bg-gray-100 rounded-xl">
     <h1 class="mb-6 text-3xl">Log in</h1>
 

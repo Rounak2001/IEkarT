@@ -1,55 +1,61 @@
 <!doctype html>
-
+{% load static %}
 <html>
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="stylesheet" href="{% static "images\css\base.css" %}">
+        
 
-        <title>{% block title %}{% endblock %} | Puddle</title>
+        <link rel="stylesheet" href="images\css\detail.css">
+        <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <title>{% block title %}{% endblock %} | IEkarT</title>
     </head>
 
     <body>
-        <nav class="py-6 px-6 flex justify-between items-center border-b border-gray-200">
-            <a href="/" class="text-xl font-semibold">Puddle</a>
+        <div class="log">
+            <a href="/"> <img src="{% static 'images/4.png' %}" alt="IEkarT logo" class="logo"></a>
+                
+        </div> 
+        
 
-            <div class="space-x-6">
-                <a href="{% url 'item:new' %}" class="text-lg font-semibold hover:text-gray-500">New item</a>
-                <a href="{% url 'item:items' %}" class="text-lg font-semibold hover:text-gray-500">Browse</a>
-
-                {% if request.user.is_authenticated %}
-                    <a href="{% url 'conversation:inbox' %}" class="px-6 py-3 text-lg font-semibold bg-teal-500 text-white rounded-xl hover:bg-teal-700">Inbox</a>
-                    <a href="{% url 'dashboard:index' %}" class="px-6 py-3 text-lg font-semibold bg-gray-500 text-white rounded-xl hover:bg-gray-700">Dashboard</a>
-                {% else %}
-                    <a href="{% url 'core:signup' %}" class="px-6 py-3 text-lg font-semibold bg-teal-500 text-white rounded-xl hover:bg-teal-700">Sign up</a>
-                    <a href="{% url 'core:login' %}" class="px-6 py-3 text-lg font-semibold bg-gray-500 text-white rounded-xl hover:bg-gray-700">Log in</a>
-                {% endif %}
-            </div>
-        </nav>
+        <div class="navbar"    
+        style="background-color:#a7e5f8;">
+            <!-- <a class="active1" href="#"><i class="fa fa-fw fa-home"></i> Home</a>  -->
+            <a href="/"><img src="{% static "images\home.png" %} " title="Home" alt="Home" class="home" style="height: 50px; width: 50px; margin-top: 0px;"></a>
+            <a href="{% url 'item:new' %}"><i class="fa fa-fw fa-search" style="margin-left: -5px;"></i>New Item</a> 
+            <a href="{% url 'item:items' %}"><i class="fa fa-fw fa-envelope"></i> Browse</a> 
+            {% if request.user.is_authenticated %}
+            <a href="{% url 'conversation:inbox' %}"><i class="fa fa-fw fa-user"></i> Inbox</a>
+            <a href="{% url 'dashboard:index' %}"><i class="fa fa-fw fa-user"></i> Dashboard</a>
+            <a href="{% url 'core:logout' %}" title="Logout" class="act"><i class=""></i>Logout</a>
+           
+            {% else %}
+            <a href="{% url 'core:signup' %}" title="SignUp" class="act"><i class=""></i>SignUp</a>
+            <a href="{% url 'core:login' %}" class="fil"><i ></i>Login</a>
+            {% endif %}
+        </div>
 
         <div class="px-6 py-6">
             {% block content %}
             {% endblock %}
         </div>
 
-        <footer class="py-6 px-6 flex justify-between bg-gray-800">
-            <div class="w-2/3 pr-10">
-                <h3 class="mb-5 font-semibold text-gray-400">About</h3>
+        
 
-                <p class="text-lg text-gray-500">Lorem ipsum bla bla bla. Lorem ipsum bla bla bla. Lorem ipsum bla bla bla.</p>
-            </div>
-
-            <div class="w-1/3">
-                <h3 class="mb-5 font-semibold text-gray-400">Menu</h3>
-
-                <ul class="space-y-2">
-                    <li><a href="#" class="text-lg text-teal-500 hover:text-teal-700">About</a></li>
-                    <li><a href="{% url 'core:contact' %}" class="text-lg text-teal-500 hover:text-teal-700">Contact</a></li>
-                    <li><a href="#" class="text-lg text-teal-500 hover:text-teal-700">Privacy policy</a></li>
-                    <li><a href="#" class="text-lg text-teal-500 hover:text-teal-700">Term of use</a></li>
-                </ul>
-            </div>
-        </footer>
+       
+        <footer class="py-3 my-4">
+            <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+              <li class="nav-item"><a href="/" class="nav-link px-2 text-body-secondary">Home</a></li>
+              <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Features</a></li>
+              <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">FAQs</a></li>
+              <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">About</a></li>
+            </ul>
+            <p class="text-center text-body-secondary">© 2023 CommerceCoders, Inc</p>
+          </footer>
     </body>
 </html>

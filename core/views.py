@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-
+from django.contrib import messages
 from item.models import Category, Item
 
 from .forms import SignupForm
@@ -16,12 +16,18 @@ def index(request):
 def contact(request):
     return render(request, 'core/contact.html')
 
+def logout(request):
+    return render(request, 'core/logout.html')
+
 def signup(request):
     if request.method == 'POST':
         form = SignupForm(request.POST)
 
         if form.is_valid():
             form.save()
+
+             # Set a success message
+            messages.success(request, 'Registered successfully.')
 
             return redirect('/login/')
     else:

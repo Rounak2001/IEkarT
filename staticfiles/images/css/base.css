@@ -1,0 +1,198 @@
+/*
+*{
+    background-color: #e0fbfc;
+    padding: 0%;
+    margin: 0%;
+}
+
+.cards {
+    background: #fff;
+    border-radius: 5px;
+    opacity: 85%;
+    width: 650px;
+    max-width: 100%;
+    min-height: 480px;
+    transition: 333ms;
+}
+
+h1{
+    background: #fff;
+}
+p{
+    background: #fff;
+}
+*/
+.logo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 0.1rem;
+    width: 17rem;
+    background-color: #a7e5f8;
+    padding-bottom: 5px;
+
+}
+.log{
+    background-color: #a7e5f8;
+    text-align: center; 
+        width: 100%; 
+}
+
+li{
+    display: inline-block ;
+    padding-top: 5px;
+}
+.foot{
+   display:flex;
+   flex-direction: column;
+   align-items:center; 
+   justify-content: space-between;
+   background-color: #e0fbfc;
+}
+.foot>*{
+    background-color: #e0fbfc;
+
+}/*
+.home{
+    padding: 5px 5px;
+
+}
+.nav{
+    display:-ms-inline-flexbox;
+
+}
+  
+.nav>*{
+    background-color: #a7e5f8;
+}*/
+footer {
+    bottom: 0;
+    width: 100%;
+    margin-bottom:0;
+    display: flex;
+    justify-content: center;
+    
+    
+} 
+.fot{
+    list-style: none;
+
+}
+
+*{box-sizing:border-box;}
+body {font-family:'Montserrat',sans-serif;margin:0;}
+
+
+.navbar {width:100%; background-color:#123; overflow:auto;}
+
+.navbar a {float:left; padding:15px; color:black; text-decoration:none; font-size:20px; background-color: #a7e5f8; }
+
+.navbar a:hover {background-color:#4fb9af; color:white; border-radius: 5%; margin-bottom: 5px; margin-top: -5px; text-decoration: none; }
+.navbar a:hover>i {background-color:#4fb9af; color:white;}
+.home{background-color: #a7e5f8; margin-bottom: -6px;}
+.navbar a:hover>img{background-color: #4fb9af;}
+.act{margin-top: 8px;}
+.act:hover{margin-bottom: 5px; margin-top: -5px;}
+.fil{margin-top: 8px;}
+.fil:hover{margin-bottom: 5px; margin-top: -5px;}
+.navbar i {background-color: #a7e5f8; margin-top: 10px; }
+
+.active1 {background-color:#4caf50;}
+
+@media screen and (max-width:500px)
+{
+    .navbar a {float:none; display:block; text-align:center;}
+}
+
+.card{
+    margin-left: 30px;
+}
+.card:hover{
+    box-shadow: 0 0 11px rgba(6,84,101,1); }
+
+.pdt{
+    display: flex;
+    background-color: white;
+    flex-wrap: wrap;
+    row-gap: 20px;
+}
+
+
+
+/* NavBar With Search Bar & Icons 
+
+.topnav {overflow:hidden; background-color:#e9a9a9;}
+
+.topnav a {float:left; display:block; color:lightcyan; text-align:center; padding:25px; text-decoration:none; font-size:18px; }
+
+.topnav a:hover {background-color:lemonchiffon; color:darkslateblue;}
+
+.topnav a.active2 {background-color:steelblue; color:lavenderblush;}
+
+.topnav .search-container {float:right;}
+
+.topnav input[type="text"]
+{padding:6px; margin-top:18px; font-size:18px; border:none;}
+
+.topnav .search-container button {float:right; padding:7.5px 6px; margin-top:18px;margin-right:20px; background:deeppink; font-size:18px; border:none; cursor:pointer;}
+
+.topnav .search-container button:hover {background:hotpink;}
+
+@media screen and (max-width:500px)
+{.topnav .search-container {float:none;}.topnav a, .topnav input[type="text"], .topnav .search-container button {float:none; display:block; text-align:center; width:100%; margin:0; padding:14px;}.topnav input[type="text"]{border:1px solid crimson;}}
+*/
+
+
+/* Hoverable Side Nav */
+
+#sidenav a {position:absolute; left:-95px; transition:0.3s; padding:15px; width:120px; text-decoration:none; font-size:20px; color:honeydew; border-radius:0 8px 8px 0;}
+
+#sidenav a:hover {left:0;}
+
+#about {top:280px; background-color:lightseagreen;}
+
+#blog {top:340px; background-color:pink;}
+
+#projects {top:400px; background-color:skyblue;}
+
+#contact {top:460px; background-color:palevioletred;}
+
+.hover {margin-left:80px;}
+
+
+
+/* Border Links 
+
+.topnav1{background:#eee;overflow:auto}
+.topnav1 a{float:left; display:block; color:darkblue; text-align:center; padding:14px 18px; text-decoration:none; font-size:18px; border-bottom:3px solid transparent;}
+
+.topnav1 a:hover {border-bottom:3px solid darkred;}
+
+.topnav1 a:nth-child(4):hover {border-bottom:none;}
+
+.topnav1 a:nth-child(5):hover {border-top:3px solid darkred; border-bottom:none;}
+
+.topnav1 a:nth-child(6):hover {border-top:3px solid darkred; border-bottom:none;}
+
+.topnav1 a.active3 {border-bottom:3px solid darkred;}
+
+.topnav1 a.active4 {border-top:3px solid darkred;} */
+
+.border {padding-left:100px;}
+
+
+
+/* Responsive Navbar With Links of Same Widths 
+
+.navbar2 {width:100%; background-color:#555; overflow:hidden;}
+
+.navbar2 a {float:left; padding:15px; color:seashell; text-decoration:none; font-size:18px; width:25%;/*Four Links of Equal Widths text-align:center;}
+
+.navbar2 a:hover {background-color:gainsboro; color:lightseagreen}
+
+.navbar2 a.active5 {background-color:skyblue; color:saddlebrown} */
+
+@media screen and (max-width:500px)
+{.navbar2 a {float:none; display:block; width:100%; text-align:left;}} 

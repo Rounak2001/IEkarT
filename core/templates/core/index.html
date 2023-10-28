@@ -3,26 +3,26 @@
 {% block title %}Welcome{% endblock %}
 
 {% block content %}
-    <div class="mt-6 px-6 py-12 bg-gray-100 rounded-xl">
-        <h2 class="mb-12 text-2xl text-center">Newest items</h2>
-
-        <div class="grid grid-cols-3 gap-3">
-            {% for item in items %}
-                <div>
-                    <a href="{% url 'item:detail' item.id %}">
-                        <div>
-                            <img src="{{ item.image.url }}" class="rounded-t-xl">
-                        </div>
-
-                        <div class="p-6 bg-white rounded-b-xl">
-                            <h2 class="text-2xl">{{ item.name }}</h2>
-                            <p class="text-gray-500">Price: {{ item.price }}</p>
-                        </div>
-                    </a>
-                </div>
-            {% endfor %}
+    
+    <div class="pdt">
+        {% for item in items %}
+        <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="{{ item.image.url }}"alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">{{ item.name }}</h5>
+          <p class="card-text">Price: {{ item.price }}</p>
+          <a href="{% url 'item:detail' item.id %}" class="btn btn-primary">See more</a>
         </div>
+      </div>
+      {% endfor %}
     </div>
+
+
+
+
+
+
+
 
     <div class="mt-6 px-6 py-12 bg-gray-100 rounded-xl">
         <h2 class="mb-12 text-2xl text-center">Categories</h2>

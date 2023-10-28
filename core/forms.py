@@ -33,3 +33,9 @@ class SignupForm(UserCreationForm):
         'placeholder': 'Repeat password',
         'class': 'w-full py-4 px-6 rounded-xl'
     }))
+    # checks college email
+    def clean_email(self):
+        email = self.cleaned_data.get('email')
+        if not email.endswith('@ietlucknow.ac.in'):
+            raise forms.ValidationError("Registration is restricted to @ietlucknow.ac.in email addresses.")
+        return email
