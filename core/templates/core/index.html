@@ -1,43 +1,90 @@
 {% extends 'core/base.html' %}
-
+{% load static %} 
 {% block title %}Welcome{% endblock %}
 
 {% block content %}
+<!--  Hero Section -->
+<section class="relative bg-[url('{% static 'images/edubg.jpg' %}')] bg-cover bg-center text-white py-24 px-6 min-h-[80vh] flex items-center justify-center animate-slide-in-down">
     
-    <div class="pdt">
-        {% for item in items %}
-        <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src="{{ item.image.url }}"alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title">{{ item.name }}</h5>
-          <p class="card-text">Price: {{ item.price }}</p>
-          <a href="{% url 'item:detail' item.id %}" class="btn btn-primary">See more</a>
+    <!-- Gradient Overlay -->
+    <div class="absolute inset-0 bg-gradient-to-r from-purple-500/70 via-pink-500/60 to-blue-500/70 backdrop-blur-sm"></div>
+
+    <!-- Centered Content -->
+    <div class="relative z-10 text-center space-y-6 max-w-3xl animate-fade-in">
+        <h1 class="text-4xl md:text-6xl font-extrabold leading-tight tracking-tight">
+            Discover the Best <span class="text-yellow-300">Student Deals</span>!
+        </h1>
+        <p class="text-lg md:text-2xl leading-relaxed text-gray-200">
+            Find products you love at prices you'll adore. Perfect for every student!
+        </p>
+        
+        <!-- Call-to-Action Buttons -->
+        <div class="flex justify-center gap-4 animate-bounce">
+            <a href="#products" class="inline-block bg-white text-blue-600 font-semibold py-3 px-8 rounded-full shadow-md hover:bg-gray-100 transition">
+                Shop Now 🎯
+            </a>
+            <a href="#categories" class="inline-block bg-yellow-400 text-gray-900 font-semibold py-3 px-8 rounded-full shadow-md hover:bg-yellow-300 transition">
+                Browse Categories 📚
+            </a>
         </div>
-      </div>
-      {% endfor %}
-    </div>
 
-
-
-
-
-
-
-
-    <div class="mt-6 px-6 py-12 bg-gray-100 rounded-xl">
-        <h2 class="mb-12 text-2xl text-center">Categories</h2>
-
-        <div class="grid grid-cols-3 gap-3">
-            {% for category in categories %}
-                <div>
-                    <a href="#">
-                        <div class="p-6 bg-white rounded-b-xl">
-                            <h2 class="text-2xl">{{ category.name }}</h2>
-                            <p class="text-gray-500">{{ category.items.count }} items</p>
-                        </div>
-                    </a>
-                </div>
-            {% endfor %}
+        <!-- Student-themed Icons -->
+        <div class="flex justify-center gap-6 mt-6 text-4xl animate-fade-in-up">
+            <span>🎒</span>
+            <span>📚</span>
+            <span>💻</span>
+            <span>🎧</span>
         </div>
     </div>
+</section>
+
+<!-- Gap Between Sections -->
+<div class="my-8"></div>
+
+<!-- Our Products Heading -->
+<h2 class="text-4xl font-bold text-center text-gray-800 mb-6 animate-slide-in-left">Our Products</h2>
+
+<!--  Products Section -->
+<div id="products" class="pdt overflow-x-auto whitespace-nowrap space-x-4 p-8 bg-gray-50 shadow-lg rounded-2xl animate-zoom-in bg-gradient-to-r from-purple-500/70 via-pink-500/60 to-blue-500/70 scroll-smooth snap-x snap-mandatory w-full">
+    {% for item in items %}
+    <div class="inline-block w-72 bg-purple-100 shadow-xl rounded-2xl overflow-hidden hover:shadow-2xl transition-transform transform hover:scale-105 duration-300 animate-fade-in-up snap-start">
+        <div class="h-52 w-full overflow-hidden flex justify-center items-center">
+            <img class="w-40 h-40 object-cover rounded-full border-4 border-white shadow-md" src="{{ item.image.url }}" alt="{{ item.name }}">
+        </div>
+        <div class="p-5 space-y-2">
+            <h5 class="text-2xl font-bold text-gray-900 animate-pulse">{{ item.name }}</h5>
+            <p class="text-lg text-gray-600 animate-fade-in">💰 ${{ item.price }}</p>
+            <a href="{% url 'item:detail' item.id %}" 
+               class="inline-block bg-gradient-to-r from-blue-500 to-indigo-600 text-white py-2 px-6 rounded-full shadow-md hover:shadow-xl hover:from-blue-600 hover:to-indigo-700 transition-all duration-300">
+                See More →
+            </a>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+<!-- Categories Section -->
+<div id="categories" class="mt-12 px-8 py-14 bg-gradient-to-r from-purple-500/70 via-pink-500/60 to-blue-500/70 rounded-3xl shadow-lg animate-fade-in-up">
+    <h2 class="mb-10 text-4xl font-extrabold text-center text-gray-800 tracking-tight animate-slide-in-right">Explore Categories</h2>
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+        {% for category in categories %}
+        <a href="#" 
+           class="block bg-white p-8 rounded-2xl shadow-md hover:shadow-xl transition-transform transform hover:-translate-y-2 hover:scale-105 duration-300 animate-zoom-in">
+            <h3 class="text-2xl font-semibold text-gray-900 animate-fade-in">{{ category.name }}</h3>
+            <p class="text-gray-500 mt-3 text-sm animate-fade-in-up">{{ category.items.count }} items available</p>
+        </a>
+        {% endfor %}
+    </div>
+</div>
+
+<!--  Newsletter Subscription -->
+<section class="bg-gradient-to-r from-purple-500/70 via-pink-500/60 to-blue-500/70 py-12 px-6 text-center shadow-xl mt-10 rounded-2xl animate-slide-in-up">
+    <h3 class="text-3xl font-bold text-gray-800 mb-4 animate-fade-in">Subscribe to Our Newsletter</h3>
+    <p class="text-gray-600 mb-6 animate-fade-in">Stay updated with the latest deals and offers!</p>
+    <form action="#" class="flex justify-center items-center gap-4 max-w-md mx-auto animate-zoom-in">
+        <input type="email" placeholder="Enter your email" class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+        <button type="submit" class="bg-blue-500 text-white px-6 py-3 rounded-lg hover:bg-blue-600 transition animate-bounce">Subscribe</button>
+    </form>
+</section>
+
 {% endblock %}
