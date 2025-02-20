@@ -1,0 +1,70 @@
+{% extends 'core/base.html' %}
+
+{% block title %}FAQ - IET Lucknow Marketplace{% endblock %}
+
+{% block content %}
+<style>
+    body{
+        overflow: visible;
+    }
+    div.faq-container{
+        background-color:rgba(167, 229, 248, 0.76);
+        margin: 0.5rem auto;
+        border: 2px solid #8DB2C5;
+        padding:2rem;
+        border-radius:1rem;
+        box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+        width: 50%;
+    }
+    div.faq-container h1{
+        color: #0097B2;
+        font-weight: 600;
+        text-align: center;
+        margin: 1rem 1rem 1.5rem 1rem;
+        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+        text-decoration: underline;
+    }
+    p{
+        font-size: 1.1rem;
+    }
+    
+</style>
+<div class="w-3/4 my-6 mx-auto p-6 bg-gray-100 rounded-xl faq-container">
+    <h1 class="text-3xl mb-6">Frequently Asked Questions (FAQ)</h1>
+    
+    <div class="faq-item mb-4">
+        <h4 class="text-xl font-semibold">1. What is IET Lucknow Marketplace?</h4>
+        <p class="text-gray-700"> &rarr; IET Lucknow Marketplace is a secure online platform where students can buy and sell pre-owned items within the college community.</p>
+    </div>
+
+    <div class="faq-item mb-4">
+        <h4 class="text-xl font-semibold">2. Who can use this platform?</h4>
+        <p class="text-gray-700">&rarr; Only students, faculty, and staff of IET Lucknow can register and use this marketplace.</p>
+    </div>
+
+    <div class="faq-item mb-4">
+        <h4 class="text-xl font-semibold">3. How do I list an item for sale?</h4>
+        <p class="text-gray-700"> &rarr; After logging in, go to the 'Sell an Item' section, provide details, upload images, and submit your listing.</p>
+    </div>
+
+    <div class="faq-item mb-4">
+        <h4 class="text-xl font-semibold">4. Is it free to use?</h4>
+        <p class="text-gray-700"> &rarr; Yes, listing and buying items on the platform are completely free for the IET Lucknow community.</p>
+    </div>
+
+    <div class="faq-item mb-4">
+        <h4 class="text-xl font-semibold">5. How do I contact the seller?</h4>
+        <p class="text-gray-700"> &rarr; Once you find an item you're interested in, you can contact the seller through the platform's messaging system.</p>
+    </div>
+
+    <div class="faq-item mb-4">
+        <h4 class="text-xl font-semibold">6. What types of items can be sold?</h4>
+        <p class="text-gray-700"> &rarr; Students can sell books, electronics, bicycles, furniture, and other college essentials. Illegal or restricted items are not allowed.</p>
+    </div>
+
+    <div class="faq-item mb-4">
+        <h4 class="text-xl font-semibold">7. How can I report an issue?</h4>
+        <p class="text-gray-700"> &rarr; If you encounter any problems or suspicious activity, please report it via the 'Contact Us' page.</p>
+    </div>
+</div>
+{% endblock %}
