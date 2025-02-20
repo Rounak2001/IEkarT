@@ -4,7 +4,10 @@
 
 {% block content %}
 
-{% comment %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/login.css' %}">
+
+{% comment %} 
 <!--  edited     -->
 <body>
     <!-- Animated Wave Background  -->
@@ -71,8 +74,39 @@
 
 <!--pahale ka-->
   {% endcomment %}
-<div class="w-1/2 my-6 mx-auto p-6 bg-gray-100 rounded-xl">
-    <h1 class="mb-6 text-3xl">Log in</h1>
+
+<style>
+    body{
+        overflow: visible;
+    }
+    div.login-container{
+        background-color:rgba(167, 229, 248, 0.76);
+        margin: 0.2rem auto;
+        border: 2px solid #8DB2C5;
+        padding:2rem;
+        border-radius:2rem;
+        box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+    }
+    div.login-container h1{
+        color: #0097B2;
+        font-weight: 700;
+        text-align: center;
+        margin:0.5rem;
+    }
+    button{
+        display: flex;
+        justify-content: center;
+        align-item: center;
+        margin:0.5rem auto;
+    }
+    button:hover{
+        border: 2px solid #015871;
+        background-color: #015871;
+    }
+</style>
+
+<div class="w-1/2 my-6 mx-auto p-6 bg-gray-100 rounded-xl login-container">
+    <h1 class="mb-6 text-xl">login</h1>
 
     <form method="post" action=".">
         {% csrf_token %}
@@ -97,7 +131,7 @@
             </div>
         {% endif %}
 
-        <button class="py-4 px-8 text-lg bg-teal-500 hover:bg-teal-700 rounded-xl text-white">Submit</button>
+        <button class="w-full py-2 px-10 text-lg bg-teal-500 hover:bg-red rounded-xl text-white">Submit</button>
     </form>
 </div>
 {% endblock %}
