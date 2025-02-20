@@ -1,0 +1,101 @@
+{% extends 'core/base.html' %}
+
+{% block title %}About Us | IEkart{% endblock %}
+
+{% block content %}
+<style>
+    body{
+        overflow: visible;
+    }
+    div.about-container{
+        background-color:rgba(167, 229, 248, 0.76);
+        margin: 0.5rem auto;
+        border: 2px solid #8DB2C5;
+        padding:2rem;
+        border-radius:1rem;
+        box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+        width: 70%;
+    }
+    div.about-container h1{
+        color: #0097B2;
+        font-weight: 600;
+        text-align: center;
+        margin: 1rem 1rem 1.5rem 1rem;
+        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+        text-decoration: underline;
+    }
+    strong{
+        color:rgb(2, 119, 140);
+    }
+    span{
+        background: rgb(2, 119, 140);
+        color: #fff;
+        padding: 0 0.5rem;
+    }
+    p{
+        font-size: 1.1rem;
+    }
+    .about-container ul,.about-container ol{
+        list-style-type: none;
+        display: flex;
+        gap: 1rem;
+    }
+    .about-container ul li,
+    .about-container ol li{
+        padding: 1.5rem;
+        border-radius: 2rem;
+        border: 2px solid rgb(2, 119, 140);
+        background-color: rgba(255, 255, 255, 0.66);
+    }
+    
+</style>
+<div class="container mx-auto my-12 p-8 shadow-md rounded-lg about-container">
+    <h1 class="text-4xl font-bold text-teal-600 mb-6 text-center">About Us</h1>
+
+    <p class="text-lg text-gray-700 text-center">
+        Welcome to <strong>IEkart</strong> - a student-centric e-commerce platform built exclusively for the 
+        <strong>IET Lucknow</strong> community. Our goal is to provide a <strong>safe, convenient, and reliable</strong> 
+        marketplace for students to <strong>buy and sell pre-owned items</strong> such as books, gadgets, bicycles, and more.
+    </p>
+
+    <!-- Mission Section -->
+    <div class="mt-8">
+        <h2 class="text-3xl font-semibold text-teal-500 mb-4 text-center">Our <span> Mission</span></h2>
+        <p class="text-lg text-gray-600 text-center">
+            At IEkart, we aim to <strong>reduce waste</strong>, promote <strong>affordable student transactions</strong>, 
+            and create a trusted platform where students can trade items securely within the campus.
+        </p>
+    </div>
+
+    <!-- Why Choose Us Section -->
+    <div class="mt-8">
+        <h2 class="text-3xl font-semibold text-teal-500 mb-4 text-center">Why <span>Choose IEkart?</span></h2>
+        <ul class="list-disc text-lg text-gray-600 pl-8">
+            <li><strong>Secure Transactions:</strong> Only verified IET Lucknow students can use the platform.</li>
+            <li><strong>Cost Savings:</strong> Buy pre-owned items at a fraction of the original cost.</li>
+            <li><strong>Eco-Friendly:</strong> Promote sustainability by reusing items.</li>
+            <li><strong>Easy to Use:</strong> A simple, intuitive platform tailored for students.</li>
+        </ul>
+    </div>
+
+    <!-- How It Works Section -->
+    <div class="mt-8">
+        <h2 class="text-3xl font-semibold text-teal-500 mb-4 text-center">How <span>It Works?</span></h2>
+        <ol class="list-decimal text-lg text-gray-600 pl-8">
+            <li><strong>Sign Up:</strong> Create an account with your IET Lucknow email.</li>
+            <li><strong>List an Item:</strong> Upload details and set a price for your pre-owned item.</li>
+            <li><strong>Buy & Sell:</strong> Browse listings, chat with sellers, and complete transactions.</li>
+            <li><strong>Meet & Exchange:</strong> Arrange a meetup within campus to exchange the item.</li>
+        </ol>
+    </div>
+
+    <!-- Contact Section -->
+    <div class="mt-8 text-center">
+        <h2 class="text-3xl font-semibold text-teal-500 mb-4">Get in <span>Touch</span></h2>
+        <p class="text-lg text-gray-600">
+            Have questions or suggestions? Reach out to us at 
+            <a href="mailto:support@iekart.com" class="text-teal-500 font-bold">support@iekart.com</a>
+        </p>
+    </div>
+</div>
+{% endblock %}
