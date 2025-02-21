@@ -16,6 +16,12 @@ def index(request):
 def contact(request):
     return render(request, 'core/contact.html')
 
+def faq_view(request):
+    return render(request, 'core/faq.html')
+
+def about(request):
+    return render(request, 'core/about.html')
+
 def logout(request):
     return render(request, 'core/logout.html')
 

@@ -6,8 +6,52 @@
 {% block title %}Sign up{% endblock %}
 
 {% block content %}
-<div class="w-1/2 my-6 mx-auto p-6 bg-gray-100 rounded-xl text-center">
-    <h1 style="color: gray;" class="mb-6 text-3xl">Sign up</h1>
+
+<style>
+    body{
+        overflow: visible;
+    }
+    div.signup-container{
+        background-color:rgba(167, 229, 248, 0.76);
+        margin: 0.5rem auto;
+        border: 2px solid #8DB2C5;
+        padding:2rem;
+        border-radius:2rem;
+        box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+        width: 30%;
+    }
+    div.signup-container h1{
+        color: #0097B2;
+        font-weight: 700;
+        text-align: center;
+        margin:0.5rem;
+    }
+    form{
+        margin: 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        text-align: left;
+    }
+    button{
+        display: flex;
+        justify-content: center;
+        align-item: center;
+        margin:0.5rem auto;
+        border-radius: 1rem;
+        padding: 0.5rem 3rem;
+        background-color: #0097B2;
+        border: none;
+    }
+    button:hover{
+        border: 2px solid #015871;
+        background-color: #015871;
+    }
+</style>
+
+<div class="w-1/2 my-6 mx-auto p-6 bg-gray-100 rounded-xl text-center signup-container">
+    <h1 class="mb-6 text-3xl">Sign up</h1>
     {% if messages %}
     <div class="alert alert-success">
         {{ messages }}
@@ -23,17 +67,17 @@
             {{ form.username }}
         </div>
 
-        <div class="mb-3">
+        <div class="mb-3 ml-3">
             <label class="inline-block mb-2">Email</label><br>
             {{ form.email }}
         </div>
 
-        <div class="mb-3">
+        <div class="mb-3 ml-3">
             <label class="inline-block mb-2">Password</label><br>
             {{ form.password1 }}
         </div>
 
-        <div class="mb-3">
+        <div class="mb-3 ml-3">
             <label class="inline-block mb-2">Repeat password</label><br>
             {{ form.password2 }}
         </div>
@@ -48,7 +92,7 @@
             </div>
         {% endif %}
 
-        <button class="py-4 px-8 text-lg bg-teal-500 hover:bg-teal-700 rounded-xl text-white">Submit</button>
+        <button class="text-lg bg-teal-500 hover:bg-teal-700 rounded-xl text-white">Submit</button>
     </form>
 </div>
 {% endblock %}
