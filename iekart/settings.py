@@ -51,6 +51,9 @@ INSTALLED_APPS = [
     'core',
     'dashboard',
     'item',
+    'daphne',  # ASGI Server
+    'channels',  # Django Channels
+    'chat',
 ]
 
 MIDDLEWARE = [
@@ -83,6 +86,21 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'iekart.wsgi.application'
 
+ASGI_APPLICATION = "IEkarT.asgi.application"
+# ASGI configuration
+ASGI_APPLICATION = "iekart.asgi.application"
+
+# Channels Layer Configuration
+CHANNEL_LAYERS = {
+    "default": {
+        "BACKEND": "channels.layers.InMemoryChannelLayer",  # For development
+        # Use Redis in production
+        # "BACKEND": "channels_redis.core.RedisChannelLayer",
+        # "CONFIG": {
+        #     "hosts": [("127.0.0.1", 6379)],
+        # },
+    },
+}
 
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
